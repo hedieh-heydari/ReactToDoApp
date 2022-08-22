@@ -5,7 +5,6 @@ import ToDoList from "./TodoList";
 const TodoApp = () => {
     const [todos, setTodos] = useState([]);
 
-
     const addTodoHandler = (input) => {
         const newTodo = {
             id: Math.floor(Math.random() * 1000),
@@ -15,10 +14,9 @@ const TodoApp = () => {
         setTodos(...todos, newTodo)
     }
     return (
-
         <div className="container">
             <ToDoForm addTodoHandler={addTodoHandler} />
-            <ToDoList />
+            <ToDoList todos={todos} />
         </div>
     );
 }
