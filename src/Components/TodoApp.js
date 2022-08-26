@@ -14,10 +14,14 @@ const TodoApp = () => {
         setTodos([...todos, newTodo])
         console.log(todos)
     }
+    const completeTodo = (id) => {
+        console.log(id)
+
+    }
     return (
         <div className="container">
             <ToDoForm addTodoHandler={addTodoHandler} />
-            <ToDoList todos={todos} />
+            <ToDoList todos={todos} onComplete={completeTodo} />
         </div>
     );
 }
