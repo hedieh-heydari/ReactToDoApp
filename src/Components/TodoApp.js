@@ -10,8 +10,9 @@ const TodoApp = () => {
             id: Math.floor(Math.random() * 1000),
             text: input,
             isCompleted: false
-        }
-        setTodos(...todos, newTodo)
+        };
+        setTodos([...todos, newTodo])
+        console.log(todos)
     }
     return (
         <div className="container">
