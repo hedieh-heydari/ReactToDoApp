@@ -6,8 +6,9 @@ const ToDoList = ({ todos, onComplete, onDelete, onEdit, onUpdateTodo }) => {
   const [edit, setEdit] = useState({ id: null, text: "", isCompleted: false })
 
 
-  const editTodo = () => {
-onUpdateTodo(edit.id)
+  const editTodo = (newValue) => {
+    onUpdateTodo(edit.id, newValue)
+    setEdit({ id: null, text: "" })
   }
 
   const renderTodos = () => {
@@ -22,7 +23,7 @@ onUpdateTodo(edit.id)
     })
   }
 
-  return <div> {edit.id ? <ToDoForm submitTodo={editTodo} /> : renderTodos()}</div>
+  return <div> {edit.id ? <ToDoForm submitTodo={editTodo} edit={edit} /> : renderTodos()}</div>
 }
 
 export default ToDoList;
