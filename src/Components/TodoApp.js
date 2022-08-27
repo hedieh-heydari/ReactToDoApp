@@ -29,10 +29,17 @@ const TodoApp = () => {
         setTodos(filteredTodos)
     }
 
+    const updateTodo = (id) => {
+
+    }
+
     return (
         <div className="container">
-            <ToDoForm addTodoHandler={addTodoHandler} />
-            <ToDoList todos={todos} onComplete={completeTodo} onDelete={removeTodo} />
+            <ToDoForm submitTodo={addTodoHandler} />
+            <ToDoList todos={todos} onComplete={completeTodo}
+                onDelete={removeTodo}
+                onUpdateTodo={updateTodo}
+            />
         </div>
     );
 }

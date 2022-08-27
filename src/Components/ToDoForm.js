@@ -11,7 +11,7 @@ const ToDoForm = (props) => {
             alert('enter todo!');
             return
         }
-        props.addTodoHandler(input)
+        props.submitTodo(input)
         setInput("")
     }
     return (
