@@ -1,10 +1,11 @@
 const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
     return (
         <div className="todo">
-            <div onClick={onComplete} 
-            className={todo.isCompleted && "completed"}>
+            <div onClick={onComplete}
+                className={`todoText ${todo.isCompleted ? 'completed' : ''}`}>
                 {todo.text}
-                </div>
+
+            </div>
             <div>
                 <button onClick={onEdit} className='btn'>edit</button>
                 <button onClick={onDelete} className='btn remove' >Delete</button>
