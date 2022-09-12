@@ -1,14 +1,21 @@
-const Navbar = ({ unCompletedTodos }) => {
+import { useState } from "react";
+
+const Navbar = ({ unCompletedTodos, filterTodos }) => {
+  const [status, setStatus] = useState("All");
+  const changeHandler = (e) => {
+    setStatus(e.target.value);
+    filterTodos(e.target.value)
+  };
+
+  if (!unCompletedTodos) return <h2>set your todos !</h2>;
   return (
     <header>
-      {unCompletedTodos ? (
-        <>
-          <span>{unCompletedTodos}</span>
-          <h2> are not completed</h2>
-        </>
-      ) : (
-        <h2>set your todos !</h2>
-      )}
+      <span>{unCompletedTodos}</span>
+      <select onChange={changeHandler} value={status}>
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Uncompleted">Uncompleted</option>
+      </select>
     </header>
   );
 };
