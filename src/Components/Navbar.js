@@ -12,11 +12,6 @@ const Navbar = ({ unCompletedTodos, onChange, selectedOption }) => {
       <span>{unCompletedTodos}</span>
 
       <Select onChange={onChange} value={selectedOption} options={options} />
-      {/* <select onChange={onChange} value={selectedOption}>
-        <option value="All">All</option>
-        <option value="Completed">Completed</option>
-        <option value="Uncompleted">Uncompleted</option>
-      </select> */}
     </header>
   );
 };
