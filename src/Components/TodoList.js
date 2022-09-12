@@ -2,7 +2,7 @@ import { useState } from "react";
 import Todo from "./Todo";
 import ToDoForm from "./ToDoForm";
 
-const ToDoList = ({ todos, onComplete, onDelete, onEdit, onUpdateTodo }) => {
+const ToDoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   const [edit, setEdit] = useState({ id: null, text: "", isCompleted: false });
 
   const editTodo = (newValue) => {
