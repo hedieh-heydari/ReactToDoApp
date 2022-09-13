@@ -60,6 +60,7 @@ const TodoApp = () => {
         setFilteredTodos(todos);
     }
   };
+  localStorage.setItem("todos", JSON.stringify(todos));
   return (
     <>
       <Card className="p-2 mb-3 bg-light">

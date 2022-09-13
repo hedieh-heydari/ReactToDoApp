@@ -1,13 +1,16 @@
 import { Button } from "reactstrap";
 
 const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
+  var data = JSON.parse(localStorage.getItem("todos"));
+  console.log(data, 'local');
+
   return (
     <div className="todo">
       <div
         onClick={onComplete}
         className={`${todo.isCompleted ? "completed" : ""} todoText`}
       >
-        {todo.text}
+        {data.text}
       </div>
       <div>
         <Button onClick={onEdit} className="me-1" color="warning" outline>
