@@ -22,6 +22,7 @@ const ToDoForm = (props) => {
   return (
     <>
       <form onSubmit={submitHandler}>
+        <h1>ToDo:</h1>
         <div className="formControl">
           <input
             ref={inputRef}
@@ -31,9 +32,7 @@ const ToDoForm = (props) => {
             onChange={changeHandler}
           />
           <Button
-            outline
-            color="primary"
-            // className={`btn ${props.edit ? "updateTodo" : "addTodo"}`}
+            color="warning"
             type="submit"
           >
             {props.edit ? "edit" : "add"}

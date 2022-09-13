@@ -1,3 +1,5 @@
+import { Button } from "reactstrap";
+
 const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
   return (
     <div className="todo">
@@ -8,12 +10,12 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
         {todo.text}
       </div>
       <div>
-        <button onClick={onEdit} className="btn">
+        <Button onClick={onEdit} className="me-1" color="warning" outline>
           edit
-        </button>
-        <button onClick={onDelete} className="btn remove">
+        </Button>
+        <Button onClick={onDelete} color="danger" outline>
           Delete
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import Select from "react-select";
+import { Badge } from "reactstrap";
 
 const Navbar = ({ unCompletedTodos, onChange, selectedOption }) => {
   const options = [
@@ -6,12 +7,15 @@ const Navbar = ({ unCompletedTodos, onChange, selectedOption }) => {
     { value: "Completed", label: "Completed" },
     { value: "Uncompleted", label: "Uncompleted" },
   ];
-  if (!unCompletedTodos) return <h2>set your todos !</h2>;
   return (
-    <header>
-      <span>{unCompletedTodos}</span>
-
+    <header className="d-flex justify-content-between w-100">
       <Select onChange={onChange} value={selectedOption} options={options} />
+      <Badge
+        color="danger"
+        className="m-1 d-flex align-items-center justify-content-center"
+      >
+        {unCompletedTodos}
+      </Badge>
     </header>
   );
 };

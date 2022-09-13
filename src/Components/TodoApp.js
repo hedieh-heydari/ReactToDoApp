@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Card } from "reactstrap";
 import Navbar from "./Navbar";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./TodoList";
@@ -60,21 +61,23 @@ const TodoApp = () => {
     }
   };
   return (
-    <div className="container">
-      <Navbar
-        unCompletedTodos={todos.filter((t) => !t.isCompleted).length}
-        filterTodos={filterTodos}
-        selectedOption={selectedOption}
-        onChange={selectHandler}
-      />
-      <ToDoForm submitTodo={addTodoHandler} />
+    <>
+      <Card className="p-2 mb-3 bg-light">
+        <ToDoForm submitTodo={addTodoHandler} />
+        <Navbar
+          unCompletedTodos={todos.filter((t) => !t.isCompleted).length}
+          filterTodos={filterTodos}
+          selectedOption={selectedOption}
+          onChange={selectHandler}
+        />
+      </Card>
       <ToDoList
         todos={filteredTodos}
         onComplete={completeTodo}
         onDelete={removeTodo}
         onUpdateTodo={updateTodo}
       />
-    </div>
+    </>
   );
 };
 
