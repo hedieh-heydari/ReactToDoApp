@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Todo from "./Todo";
 import ToDoForm from "./ToDoForm";
+import { Alert } from "reactstrap";
 
 const ToDoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   const [edit, setEdit] = useState({ id: null, text: "", isCompleted: false });
@@ -11,7 +12,8 @@ const ToDoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   };
 
   const renderTodos = () => {
-    if (todos.length === 0) return <p>add todo!</p>;
+    if (todos.length === 0)
+      return <Alert className="px-5">Nothing to do, Enjoy your Day!</Alert>;
 
     return todos.map((todo) => {
       return (

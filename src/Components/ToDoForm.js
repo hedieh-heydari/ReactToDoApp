@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Button } from "reactstrap";
 
 const ToDoForm = (props) => {
   const [input, setInput] = useState(props.edit && props.edit.text);
@@ -29,12 +30,14 @@ const ToDoForm = (props) => {
             value={input}
             onChange={changeHandler}
           />
-          <button
-            className={`btn ${props.edit ? "updateTodo" : "addTodo"}`}
+          <Button
+            outline
+            color="primary"
+            // className={`btn ${props.edit ? "updateTodo" : "addTodo"}`}
             type="submit"
           >
             {props.edit ? "edit" : "add"}
-          </button>
+          </Button>
         </div>
       </form>
     </>
