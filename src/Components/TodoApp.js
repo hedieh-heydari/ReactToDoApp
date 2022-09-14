@@ -11,6 +11,7 @@ const TodoApp = () => {
 
   useEffect(() => {
     filterTodos(selectedOption.value);
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos, selectedOption]);
 
   const addTodoHandler = (input) => {
@@ -60,13 +61,13 @@ const TodoApp = () => {
         setFilteredTodos(todos);
     }
   };
-  localStorage.setItem("todos", JSON.stringify(todos));
   return (
     <>
       <Card className="p-2 mb-3 bg-light">
         <ToDoForm submitTodo={addTodoHandler} />
         <Navbar
           unCompletedTodos={todos.filter((t) => !t.isCompleted).length}
+          completedTodos={todos.filter((t) => t.isCompleted).length}
           filterTodos={filterTodos}
           selectedOption={selectedOption}
           onChange={selectHandler}
@@ -78,6 +79,10 @@ const TodoApp = () => {
         onDelete={removeTodo}
         onUpdateTodo={updateTodo}
       />
+
+      <footer>
+       -- Hedieh --
+      </footer>
     </>
   );
 };

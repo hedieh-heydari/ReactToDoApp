@@ -31,10 +31,7 @@ const ToDoForm = (props) => {
             value={input}
             onChange={changeHandler}
           />
-          <Button
-            color="warning"
-            type="submit"
-          >
+          <Button color="warning" type="submit">
             {props.edit ? "edit" : "add"}
           </Button>
         </div>
