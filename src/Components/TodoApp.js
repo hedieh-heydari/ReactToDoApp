@@ -11,8 +11,16 @@ const TodoApp = () => {
 
   useEffect(() => {
     filterTodos(selectedOption.value);
-    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos, selectedOption]);
+
+  useEffect(() => {
+    localStorage.setItem(`todos`, JSON.stringify(todos));
+  }, [todos]);
+
+
+  localStorage.setItem('todos', JSON.stringify(todos));
+
+
 
   const addTodoHandler = (input) => {
     const newTodo = {
@@ -80,9 +88,7 @@ const TodoApp = () => {
         onUpdateTodo={updateTodo}
       />
 
-      <footer>
-       -- Hedieh --
-      </footer>
+      <footer>-- Hedieh --</footer>
     </>
   );
 };
